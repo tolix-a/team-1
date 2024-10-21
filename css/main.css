@@ -1,0 +1,333 @@
+@charset "UTF-8";
+@import url("./common.css");
+@import url("./reset.css");
+/*main.css*/
+.spot {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+}
+@media (min-width: 768px) and (max-width: 1024px) {
+  .spot {
+    width: 100%;
+  }
+}
+@media (min-width: 768px) and (max-width: 1024px) {
+  .spot {
+    width: 100%;
+  }
+}
+
+/*vh는 브라우저만큼의 세로방향만큼이 100vh, vw는 브라우저만큼의 가로방향*/
+.spot .slide figure {
+  height: 100vh;
+}
+
+.spot .slide figure img {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.spot .slide .indigator {
+  position: absolute;
+  left: 0;
+  bottom: 5%;
+  width: 100%;
+  text-align: center;
+  /* z-index: 100; z-index는 absolute랑 꼭같이 쓰임.
+
+  txt의 크기가 가로100, 세로100이기때문에 indigator를 가리기때문에 indigator 작동 안해서 z-index를 줘서 떠오르게함. 하지만 z-index없이 pointer-events를 써도됨*/
+}
+
+.spot .slide .indigator > button {
+  width: 13px;
+  height: 13px;
+  border-radius: 8px;
+  background-color: white;
+  font-size: 0;
+  margin-right: 10px;
+}
+
+.spot .slide .indigator > button:hover {
+  width: 45px;
+  transition: 0.5s;
+}
+
+.spot .txt {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+  gap: 40px;
+  color: white;
+  pointer-events: none; /*TXT에 들은 효과를 모두 없애주는 태그,
+기존 텍스트에 명령이 없어야만 쓸수있다.*/
+}
+
+.spot .txt > p {
+  text-align: center;
+  width: 800px;
+  overflow: hidden;
+  font-size: 1.5rem;
+  font-weight: 100;
+  white-space: nowrap;
+}
+@media (max-width: 767px) {
+  .spot .txt > p {
+    font-size: 1rem;
+    width: 300px;
+  }
+}
+
+.spot .txt > p > span {
+  white-space: nowrap;
+  display: inline-block;
+  animation: txt-2 3s infinite linear;
+}
+
+@keyframes txt-2 {
+  100% {
+    transform: translateX(-100%);
+  }
+}
+.spot .txt > b {
+  font-size: 4.4rem;
+}
+@media (max-width: 767px) {
+  .spot .txt > b {
+    font-size: 1.2rem;
+  }
+}
+
+.spot .txt > a::after {
+  content: "";
+  position: absolute;
+  padding: 15px 30px;
+  background-color: red;
+  border-radius: 5px;
+  z-index: -1;
+}
+
+.spot .txt > a::after:hover {
+  left: 0;
+  transition: 0.5s;
+}
+
+/* section */
+section {
+  padding: 100px;
+}
+@media (max-width: 767px) {
+  section {
+    padding: 50px;
+  }
+}
+
+section > div {
+  max-width: var(--pc_width);
+  margin: 0 auto;
+}
+
+.service-items {
+  display: flex;
+  justify-content: space-between;
+}
+@media (max-width: 767px) {
+  .service-items {
+    flex-direction: column;
+  }
+}
+
+.service-items > figure {
+  width: 30%;
+  text-align: center;
+}
+@media (max-width: 767px) {
+  .service-items > figure {
+    width: 100%;
+  }
+}
+
+@media (max-width: 767px) {
+  .service-items > figure + figure {
+    margin-top: 50px;
+  }
+}
+
+.service-items > figure > p {
+  width: 130px;
+  height: 130px;
+  margin: 0 auto;
+  border-radius: 50%;
+  background-color: var(--color-point);
+  font-size: 3rem;
+  color: white;
+  line-height: 130px;
+}
+
+/*.service-items > figure > p::after {
+   content:'shopping_cart'  이렇게 가상태그로 넣어도 쇼핑카드 아이콘 나옴
+}*/
+
+.service-items > figure > figcaption > b {
+  display: block;
+  font-size: 2rem;
+  color: #212529;
+  margin: 24px 0 8px;
+  /* white-space: nowrap; 무조건 제목을 1줄로 만드는 것
+  overflow: hidden; 넘어가면 보여지지 않게 하라
+  text-overflow: ellipsis; 넘어가는 부분은 ...으로 보여지게 하라
+  */
+}
+@media (max-width: 767px) {
+  .service-items > figure > figcaption > b {
+    font-size: 1.6rem;
+  }
+}
+
+/*portfolio*/
+.portfolio-items {
+  /* perspective: 600px; */
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px 0;
+}
+@media (max-width: 767px) {
+  .portfolio-items {
+    flex-direction: column;
+  }
+}
+
+.portfolio-items > figure {
+  width: 32%;
+}
+@media (max-width: 767px) {
+  .portfolio-items > figure {
+    width: 100%;
+  }
+}
+
+.portfolio-items > figure > p {
+  display: flex;
+  transform-style: preserve-3d;
+}
+
+.portfolio-items > figure > p > img {
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.portfolio-items > figure > figcaption {
+  clear: both;
+}
+
+.portfolio-items > figure:nth-child(1) > p > img:nth-child(2) {
+  transform: translateZ(-1px) rotateY(180deg);
+  /* transform: translateZ(-50px) rotateY(180deg); z값을 -1만 주면 딱 붙어서 카드 앞뒤장처럼 보임 */
+}
+
+.portfolio-items > figure:hover > p {
+  transform: perspective(600px) rotateY(180deg);
+}
+
+.portfolio-items > figure:nth-child(1):hover > p {
+  display: block;
+  transform: rotateY(180deg);
+  /* transform: rotateY(360deg); 팔랑팔랑하게 한바퀴 돌아감, 180deg하면 반바퀴만 돌아서 뒤를 보여주고 끝 */
+  transition: 3s;
+}
+
+.portfolio-items > figure > p {
+  position: relative;
+  padding-top: 62%;
+}
+
+.portfolio-items > figure > p > img {
+  width: 100%;
+} /*img에는 항상 100%를 넣어줘야한다. 아니면 틀어지게 됨, 정렬이나 그런것 모든것들*/
+/* .portfolio-items>figure:nth-child(1)>figcaption{
+    position: relative;
+    bottom: -265px;
+} */
+.portfolio-items > figure > figcaption {
+  padding: 24px 0;
+  text-align: center;
+}
+
+.portfolio-items > figure > figcaption > b {
+  font-size: 1.5rem;
+  color: #333;
+}
+
+/*contact*/
+.contact-form {
+  display: flex;
+  justify-content: space-between;
+}
+@media (max-width: 767px) {
+  .contact-form {
+    flex-direction: column;
+  }
+}
+
+.contact-form > div {
+  width: 49%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+@media (max-width: 767px) {
+  .contact-form > div {
+    width: 100%;
+  }
+}
+
+/*justify-content는 기본값은 가로 정렬 하지만 flex-direction: column으로 세로방향으로 바꿔주면 justify-content도 세로정렬로 바뀌게 됨, 그니까 세로라고 align쓰지말자 */
+.contact-form > div > input, .contact-form > div > textarea {
+  padding: 24px;
+  border-radius: 10px;
+  width: 100%;
+}
+@media (max-width: 767px) {
+  .contact-form > div > input, .contact-form > div > textarea {
+    width: 100%;
+    margin-bottom: 8px;
+  }
+}
+
+.contact-form > div > textarea {
+  height: 215px;
+}
+
+.contact-form > div > input::-moz-placeholder, .contact-form > div > textarea::-moz-placeholder {
+  text-transform: uppercase;
+  font-weight: bold;
+  color: #cecece;
+}
+
+.contact-form > div > input::placeholder, .contact-form > div > textarea::placeholder {
+  text-transform: uppercase;
+  font-weight: bold;
+  color: #cecece;
+}
+
+.btn {
+  padding: 15px 60px;
+}
+@media (max-width: 767px) {
+  .btn {
+    padding: 15px 70px;
+  }
+}

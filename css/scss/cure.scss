@@ -1,0 +1,198 @@
+@import "./_common";
+@import url("./reset.css");
+
+$mobile:767px;
+$tablet:768px;
+$pc:1200px;
+
+@mixin res($device){
+    @if($device == 'mobile'){
+        @media(max-width:$mobile){
+            @content;
+        }        
+    }
+    @else if($device == 'tablet'){
+        @media (min-width:$tablet) and (max-width:$pc){
+            @content;
+        }  
+    }
+    @else{
+        @media (min-width:$pc){
+            @content;
+        }  
+    }
+}
+
+@include res('mobile'){}
+@include res('tablet'){}
+
+
+/* 해양동물 구조ㆍ치료 기관 */
+.content_{
+    padding: 110px;
+    @include res('mobile'){
+        padding: 0 24px 50px;
+    }
+    @include res('tablet'){
+        padding: 0 48px 50px;
+    }
+}
+.content_cure{
+    width: 1200px;
+    margin: 0 auto;
+    text-align: left;
+    @include res('mobile'){
+        width: 100%;
+    }
+    @include res('tablet'){
+        width: 100%;
+      }
+}
+.content_cure > b{
+    font-size: 25px;
+    @include res('mobile'){
+        font-size: 18px;
+        word-break: keep-all;
+        line-height: 24px;
+        font-weight: 600;
+        letter-spacing: 0.7px;
+    }
+    @include res('tablet'){
+        font-weight: 600;
+    }
+}
+.content_cure > b > span{
+    color: #ff6600;
+}
+.content_cure > p{
+    margin-top: 50px;
+    font-size: 18px;
+    line-height: 2.0;
+    text-align: justify;
+    @include res('mobile'){
+        font-size: 14px;
+        line-height: 1.6;
+        margin-top: 24px;
+    }
+    @include res('tablet'){
+    }
+}
+.content_cure > div{
+    margin-top: 46px;
+    font-size: 18px;
+    line-height: 2.2;
+    @include res('mobile'){
+        font-size: 14px;
+        line-height: 24px;
+        margin-top: 24px;
+    }
+}
+.content_cure > div > p{
+    margin-bottom: 16px;
+}
+.content_cure > div > .popup-open{
+    border: 1px solid #b9b9b9;
+    border-radius: 5px;
+    text-align: center;
+    padding: 10px 15px;
+    cursor: pointer;
+    @include res('pc'){
+        &:hover{
+        border: none;
+        background-color: rgba(255, 102, 0, 0.8);
+        color:white;  
+        }
+    }
+    @include res('mobile'){
+        width: fit-content;
+        padding: 5px;
+    }
+}
+
+
+
+// 팝업
+.popup-wrap{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    left: 0; top: 0;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    display: none;
+    @include res('mobile'){z-index: 3;}
+    @include res('tablet'){}
+}
+.popup{
+    position: relative;
+    padding: 50px;
+    width: 800px;
+    height: 650px;
+    background-color: white;
+    z-index: 9999;
+    border-radius: 20px;
+    @include res('mobile'){
+        width: 100%;
+        height: 100vh;
+        padding: 33px;
+    }
+    @include res('tablet'){
+        width: 700px;
+        height: 700px;
+        padding: 33px;
+    }
+}
+.name{
+    width: 700px;
+    font-weight: 700;
+    font-size: 30px;
+    color: black;
+    margin-bottom: 40px;
+    line-height: 1;
+    @include res('mobile'){
+        font-size: 22px;
+        margin-bottom: 30px;
+    }
+    @include res('tablet'){}
+}
+.popup .close-button-1{
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 24px;
+    color: #fff;
+    text-decoration: none;
+    background-color: transparent;
+    padding: 5px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.popup > p{
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 160%;
+    color: rgba(0,0,0,0.75);
+    text-align: justify;
+    @include res('mobile'){
+        font-size: 16px;
+
+        overflow-y: auto;
+        height: 500px;
+    }
+    @include res('tablet'){}
+}
+.popup .close-button-2{
+    position: absolute;
+    left: 0; bottom: 0;
+    width: 100%;
+    padding: 8px 0;
+    border-radius: 0 0 20px 20px;
+    text-align: center;
+    font-weight: 400;
+    font-size: 16px;
+    color: white;
+    background-color: #ff6600;
+}

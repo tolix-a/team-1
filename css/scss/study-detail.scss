@@ -1,0 +1,135 @@
+@import "./_common";
+@import url("./reset.css");
+
+$mobile:767px;
+$tablet:768px;
+$pc:1200px;
+
+@mixin res($device){
+    @if($device == 'mobile'){
+        @media(max-width:$mobile){
+            @content;
+        }        
+    }
+    @else if($device == 'tablet'){
+        @media (min-width:$tablet) and (max-width:$pc){
+            @content;
+        }  
+    }
+    @else{
+        @media (min-width:$pc){
+            @content;
+        }  
+    }
+}
+
+@include res('tablet'){}
+
+
+.content_{
+    @include res('mobile'){
+        margin: 0 24px;
+    }
+    @include res('tablet'){
+        margin: 0 48px;
+    }
+    .research_list_menu{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 36px 30px;
+        padding-right: 300px;
+        max-width: 1400px;
+        margin: 0 auto;
+        // background-color: #eeeeee;
+        border-top: 5px double #dddddd;
+        border-bottom: 5px double #dddddd;
+        gap: 20%;
+        @include res('mobile'){
+            padding: 14px 10px;
+            flex-direction: column;
+            gap: 10px 0;
+        }
+        @include res('tablet'){
+            padding-right: 0;
+        }
+        .year{
+            display: inline-block;
+            >p{
+                font-size: 25px;
+                opacity: .3;
+                font-weight: 500;
+                color: #000;
+                @include res('mobile'){
+                    font-size: 15px;
+                }
+            }
+        }
+        .list-title{
+            width: 900px;
+            @include res('mobile'){
+                width: 250px;
+            }
+            @include res('tablet'){
+                width: 85%;
+            }
+            >p{
+                font-size: 14px;
+                opacity: .75;
+            }
+            >P:last-of-type{
+                font-size: 17px;
+                opacity: 1;
+                font-weight: 500;
+            }
+        }
+    }
+    .detail-content{
+        margin: 70px auto 0;
+        max-width: 820px;
+        // max-height: 1160px;
+        @include res('mobile'){
+            margin: 0 auto;
+        }
+        img{
+            width: 100%;
+            margin: 50px auto 0;
+        }
+    }
+    .line{
+        margin: 70px auto 160px;
+        width: 1400px;
+        position: relative;
+        @include res('mobile'){
+            width: 100%;
+            margin: 50px 0;
+        }
+        @include res('tablet'){
+            width: 100%;
+        }
+        .content-line{
+            display: inline-block;
+            width: 100%;
+            border: 1px solid #dddddd;
+        }
+        .list{
+            display: inline-block;
+            width: 60px;
+            height: 35px;
+            font-size: 14px;
+            color: #000;
+            opacity: .9;
+            text-align: center;
+            padding-top: 7px;
+
+            position: absolute;
+            top: 50px;
+            transform: translateX(-100%);
+            border: 1px solid #dddddd;
+            border-radius: 10px;
+            @include res('mobile'){
+                top: 100%;
+            }
+        }
+    }
+}

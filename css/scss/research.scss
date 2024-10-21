@@ -1,0 +1,194 @@
+@import "./_common";
+@import url("./reset.css");
+
+$mobile:767px;
+$tablet:768px;
+$pc:1200px;
+
+@mixin res($device){
+   @if($device == 'mobile'){
+      @media(max-width:$mobile){
+         @content;
+      }        
+   }
+   @else if($device == 'tablet'){
+      @media (min-width:$tablet) and (max-width:$pc){
+         @content;
+      }  
+   }
+   @else{
+      @media (min-width:$pc){
+         @content;
+      }  
+   }
+}
+
+
+
+.content_{
+   max-width: 1200px;
+   margin: 0 auto;
+   margin-bottom: 110px;
+   @include res('mobile'){
+      margin-bottom: 50px;
+   }
+   @include res('tablet'){
+      margin: 0 48px 50px 48px;
+   }
+   ul{
+      @include res('mobile'){
+         margin: 0 24px;
+      }
+      >.research{
+         display: flex;
+         justify-content: space-between;
+         align-items: center;
+         border-bottom: 1px solid #ddd;
+         padding: 70px 0;
+         
+         opacity: 0;
+         transform: translateY(35%);
+         transition: 1.2s;
+         &.uppp{
+            opacity: 1;
+            transform: translateY(0%);
+         }
+         @include res('mobile'){
+            display: flex;
+            flex-direction: column;
+            padding: 24px 0;
+         }
+         @include res('tablet'){
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 48px 0;
+         }
+         &:first-child{
+            padding-top: 0;
+         }
+         &:last-child{
+            border: 0;
+            padding-bottom: 0;
+         }
+         &:nth-of-type(2){
+            flex-direction: row-reverse;
+            @include res('mobile'){
+               flex-direction: row;
+               flex-wrap: wrap;
+               justify-content: center;
+               >.rtxt{
+                  width: 100%;
+               }
+            }
+            @include res('tablet'){
+               flex-direction: row;
+               flex-wrap: wrap;
+               justify-content: center;
+               >.rtxt{
+                  width: 100%;
+               }
+            }
+         }
+         >.rtxt{
+            width: 517px;
+            text-align: justify;
+            @include res('mobile'){
+               width: 100%;
+               margin-bottom: 24px;
+            }
+            @include res('tablet'){
+               width: 100%;
+               margin-bottom: 68px;
+            &:nth-of-type(1){
+               margin-top: 10px;
+            }
+            }
+            br:nth-of-type(1){
+               @include res('mobile'){
+                  display: none;
+               }
+            }  
+            br:last-of-type{
+               @include res('mobile'){
+                  display: none;
+               }
+               @include res('tablet'){
+                  display: none;
+               }
+            }
+            >b{
+               font-weight: 500;
+               font-size: 35px;
+               color: black;
+               line-height: 130%;
+               @include res('mobile'){
+                  font-size: 23px;
+               }
+            }
+            >p{
+               font-weight: 400;
+               font-size: 18px;
+               color: rgba(0, 0, 0, 0.75);
+               line-height: 160%;
+               &:nth-of-type(1){
+                  font-size: 25px;
+                  color: black;
+                  margin: 24px 0;
+                  >br{
+                     @include res('mobile'){
+                        display: none;
+                     }
+                     @include res('tablet'){
+                        display: none;
+                     }
+                  }
+                  @include res('mobile'){
+                     font-size: 18px;
+                     margin: 20px 0;
+                  }
+                  @include res('tablet'){
+                     letter-spacing: 0.5px;
+                  }
+               }
+               @include res('mobile'){
+                  font-size: 16px;
+               }
+            }
+         }
+         >figure{
+            >img{
+               width: 100%;
+               @include res('tablet'){
+                  width: calc(100vw - 96px);
+               }
+            }
+         }
+         >.rtxt1{
+            br:nth-of-type(1){
+               @include res('tablet'){
+               display: none;
+               }
+            }
+         }
+         >.rtxt2{
+            br:nth-of-type(1){
+               @include res('mobile'){
+                  display: inline-block;
+               }
+               @include res('tablet'){
+                  display: inline-block;
+               }
+            }  
+            br:last-of-type{
+               @include res('mobile'){
+                  display: inline-block;
+               }
+               @include res('tablet'){
+                  display: inline-block;
+               }
+            }  
+         }
+      }
+   }
+}

@@ -1,0 +1,193 @@
+@import "./_common";
+@import url("./reset.css");
+
+$mobile:767px;
+$tablet:768px;
+$pc:1200px;
+
+@mixin res($device){
+    @if($device == 'mobile'){
+        @media(max-width:$mobile){
+            @content;
+        }        
+    }
+    @else if($device == 'tablet'){
+        @media (min-width:$tablet) and (max-width:$pc){
+            @content;
+        }  
+    }
+    @else{
+        @media (min-width:$pc){
+            @content;
+        }  
+    }
+}
+
+@include res('mobile'){}
+@include res('tablet'){}
+
+
+/* 오시는 길 */
+.content_{
+    padding: 110px;
+    @include res('mobile'){
+      padding: 0 24px 50px;
+    }
+    @include res('tablet'){
+      padding: 0 48px 50px;
+    }
+  }
+  .content_map{
+    width: 1200px;
+    margin: 0 auto;
+    @include res('mobile'){
+      width: 100%;
+    }
+    @include res('tablet'){
+      width: 661px;
+    }
+  }
+  .content_map > div{
+    padding-bottom: 110px;
+
+    opacity: 0;
+    transform: translateY(15%);
+    transition: 1.2s;
+
+    &.active{
+      opacity: 1;
+      transform: translateY(0%);
+    }
+    @include res('mobile'){
+      padding: 0;
+    }
+  }
+  .content_map > div >b{
+    font-size: 25px;
+    @include res('mobile'){
+      font-size: 18px;
+    }
+  }
+
+
+// map  
+.map{
+  display: flex;
+  justify-content: space-between;
+  margin-top: 50px;
+  @include res('mobile'){
+    flex-direction: column;
+    margin: 20px 0;
+  }
+  @include res('tablet'){
+    flex-direction: column;
+    margin: 20px 0;
+  }
+}
+.map > figure{
+  width: 661px;
+  cursor: pointer;
+  @include res('mobile'){
+    width: 100%; 
+  }
+}
+.map > figure > img{width: 100%;}
+.map > div{
+  text-align: left;
+  font-size: 18px;
+  line-height: 1.8;
+  @include res('mobile'){
+    font-size: 16px;
+    line-height: 24px;
+    margin: 42px 0;
+  }
+  @include res('tablet'){
+    margin: 42px 0;
+  }
+}
+.map > div > b{}
+.map > div > p{}
+.map > div > a{
+  border-bottom: 1px solid black;
+}
+.move > ul{
+  width: 460px;
+  @include res('mobile'){
+    width: 100%;
+  }
+  @include res('tablet'){
+    width: 100%;
+  }
+}
+.move > ul > li{
+  word-break: keep-all;
+  border-bottom: 1px solid#CCCCCC;
+  margin: 15px 0;
+  @include res('mobile'){
+    padding-bottom: 10px;
+    margin-bottom: 24px;
+  }
+  @include res('tablet'){
+    padding-bottom: 10px;
+    margin-bottom: 24px;
+  }
+}
+
+.move > ul > li > div{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.move > ul > li > div > b{}
+.move > ul > li > div > img{
+  opacity: .5;
+  @include res('mobile'){
+    display: none;
+  }
+  @include res('tablet'){
+    display: none;
+  }
+}
+.move > ul > li > p{}
+
+.way{
+  display: none;
+  justify-content: space-between;
+  align-items: center;
+  @include res('mobile'){
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  @include res('tablet'){
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.move > ul{
+  @include res('mobile'){display: none;}
+  @include res('tablet'){display: none;}
+}
+
+.move.active ul{
+  @include res('mobile'){display: block;}
+  @include res('tablet'){display: block;}
+}
+
+.way > b{}
+.way > img{opacity: .5;}
+
+.move > ul > li > p{
+  display: none;
+  @include res('mobile'){display: block;}
+  @include res('tablet'){display: block;}
+}
+.move > ul > li.active p{
+  display: block;
+}
+
+.move > ul > li.active > div > img{transform: rotate(180deg);}
+.move.active .way > img{transform: rotate(180deg);}

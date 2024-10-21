@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>해양생물연구센터</title>
+    <link rel="stylesheet" href="./css/index.css" />
+    <meta property="og:url" content="https://pjiyeon90.github.io/test/" />
+    <meta property="og:type" content="Website" />
+    <meta property="og:title" content="반응형웹" />
+    <meta property="og:description" content="오픈그래스 상세 내용..." />
+    <meta property="og:image" content="./images/port_05.jpg" />
+    <link rel="icon" type="image/png" href="./img/main/favicon-32x32.png" sizes="32x32"/>
+    <link rel="icon" type="image/png" href="./img/main/favicon-16x16.png" sizes="16x16"/>
+   
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=c0301431bb06b98049ba407a1e8a433e&libraries=services"></script>
+    <script defer src="./js/index.js"></script>
+    <script defer src="./js/common.js"></script>
+    
+  </head>
+  
+  <body>
+    <!-- index.html -->
+    <main>
+      <article class="video_box" data-num="0">
+        <video
+          src="./img/main/KakaoTalk_20240627_112559627.mp4"
+          autoplay
+          muted
+          loop
+        ></video>
+        <div class="video_txt">
+          <h3>더불어 사는 행복한 세상<br />함께 만들어요~!</h3>
+          <p>
+            자연과 인간이 더불어 공존하는 아름다운 세상, 생물연구센터가
+            만들어 가겠습니다.
+          </p>
+        </div>
+        <div class="scroll">
+          <div class="scroll-round"><img src="./img/main/scroll_arrow.svg" alt="화살표이미지"></div>
+          <p>scroll</p>  
+
+
+        </div>
+      </article>
+
+      <article class="study-assignments" data-num="1">
+        <div class="study-wrap">
+        <div class="title-box">
+          <h2>연구 과제</h2>
+          <p>
+            아쿠아플라넷은 사육 연구, 번식 연구 등 해양 생물 관련<br> 복지와 보전을 위한연구를 수행하고 있습니다.
+          </p>
+        </div>
+        <!--title-box-->
+        <div class="study-box-wrap">
+          <ul >
+            <li>
+              <div class="study-front first-pic"><a href="./research.html">연구 분야</a></div>
+              <div class="study-back">
+                <strong>연구 분야</strong><em>아쿠아리움의 해양 생물의 사육 기술,<br> 건강 관리 및 질병 제어 기술 등을<br> 연구합니다.</em>
+                <span class="more-btn"><a href="./research.html" >더보기</a></span>
+              </div>
+            </li>
+            <li>
+              <div class="study-front second-pic"><a href="./aqua.html">수행 연구</a></div>
+              <div class="study-back">
+                <strong>수행 연구</strong><em>아쿠아플라넷의 아쿠아리스트는<br> 전시 생물의 복지와 보전을 위한<br> 연구를 수행하고 있습니다.</em>
+                <span class="more-btn"><a href="./aqua.html">더보기</a></span>
+              </div>
+            </li>
+            <li>
+              <div class="study-front third-pic"><a href="./study.html">보호 대상 해양생물<br> 학습게시판</a></div>
+              <div class="study-back">
+                <strong>보호 대상 해양 생물<br>학습게시판</strong><em>보호대상해양생물의 보전을 위한<br> 정책,관련 기관들의 연구, 생물<br> 정보 등을 소개합니다.</em>
+                <span class="more-btn"><a href="./study.html">더보기</a></span>
+              </div>
+            </li>
+          </ul>
+        
+        </div><!--study-box-wrap-->
+      </div><!--study_wrap-->
+      </article>
+
+
+      <article class="creature-subject" data-num="2">
+        <div class="creature-wrap">
+        <div class="title-box">
+          <h2>보전 활동 대상 생물</h2>
+          <p>
+            아쿠아플라넷은 여수, 제주, 일산, 63은 전시만이 아닌<br> 생물의 복지와 보존을 위하여 노력하고 있습니다.
+          </p>
+        </div>
+        <!--title-box-->
+        <div class="icon-box">
+          <ul>
+            <li><a href="./animal.html" data-name="고래류">
+              <img src="./img/main/whale.svg" alt="고래이미지">
+              <h5>고래류</h5>
+              <span class="round-btn" >더보기</span>
+            </a></li>
+            <li><a href="./animal.html" data-name="바다거북">
+              <img src="./img/main/turtle.svg" alt="바다거북이미지">
+              <h5>바다거북</h5>
+              <span class="round-btn" >더보기</span>
+            </a></li>
+            <li><a href="./animal.html" data-name="수달">
+              <img src="./img/main/otter.svg" alt="수달이미지">
+              <h5>수달</h5>
+              <span class="round-btn" >더보기</span>
+            </a></li>
+          </ul>
+        </div>
+      </div><!--wrap_box-->
+      </article>
+
+      <article class="rescue-cure" data-num="3" >
+        <div class="rescue-box">
+        <div class="middle-txt">
+          <h2>구조ㆍ치료 실적<br> 리스트</h2>
+          <p>
+            아쿠아플라넷은 해양수산부로부터 해양동물 전문 구조ㆍ치료 기관으로 지정되어 활동중입니다.
+          </p>
+        </div>
+        <!--title-box-->
+        <div class="tab-box">
+          <ul class="tab-nav">
+            <li><a href="#tab01" class="active" data-name="돌고래">돌고래</a></li>
+            <li><a href="#tab02" data-name="바다거북">바다 거북</a></li>
+            <li><a href="#tab03" data-name="수달">기타</a></li>
+          </ul>
+          <div class="tab-content">
+            <div class="tab01">
+              <!-- <p>뱀머리 돌고래 <span>(2018-04-26)</span></p> -->
+            </div><!--tab01-->
+            <div class="figure-wrap">
+              <span class="more"><a href="./rescue.html">더 자세히 보기</a></span>
+              <div class="figure-box">
+              <!-- <figure><img src="./img/main/rescu_01.jpg" alt="구조돌고래1"></figure> -->
+              </div><!--figure-box-->
+            </div><!--figure-wrap-->
+          </div><!--tab-content-->
+        </div><!--tab-box-->
+      </div><!--rescue-box-->
+      </article>
+
+
+
+      <article class="info-road" data-num="4">
+        <div class="middle-txt info-roadtxt">
+          <h2>오시는 길</h2>
+          <p>아쿠아플라넷은 제주, 여수(본점), 일산, 광교 지점이 있습니다.</p>
+          <ul class="guide-txt">
+            <li>
+              <span><img src="./img/main/pickpoint.svg" alt="장소아이콘">주소</span>
+              <strong>전라남도 여수시 오동도로 61-11</strong>
+            </li>
+            <li>
+              <span><img src="./img/main/call.svg" alt="전화아이콘">전화</span>
+              <strong>1833-7001</strong>
+            </li>
+            <li>
+              <span><img src="./img/main/bus.svg" alt="버스아이콘">버스</span>
+              <strong>여수공항 버스정류장에서 330, 35, 31, 33번 승차 → 동초등학교 하차 → 도보 517m
+                여수종합버스터미널 정류장에서 80, 25, 666번 승차→ 동초등학교 하차 → 도보 517m</strong>
+            </li>
+            <li>
+              <span><img src="./img/main/metro.svg" alt="기차아이콘">기차</span>
+              <strong>여수엑스포역 하차 - 도보 15분 거리</strong>
+            </li>
+            <li>
+              <span><img src="./img/main/car.svg" alt="자동차아이콘">자동차</span>
+              <strong>순천 톨케이트 → 둔덕 삼거리(30분 소요) → 남해 화학 방면 좌회전 후 2km 직진 → 오동도 방면 국도 대체 우회 도로 이용(5분 소요)</strong>
+            </li>
+          </ul>
+          <span class="more"><a href="./map.html">더 자세히 보기</a></span>
+        </div><!--middle-txt-->
+        <!--kakao map-->
+        <div class="map_wrap">
+          <!-- <div id="map" style="width:100%; height:100vh; position:relative;overflow:hidden;"></div> -->
+          <div id="map"></div>
+          <div id="menu_wrap" class="bg_white">
+              <div class="option">
+                  <div>
+                      <form onsubmit="searchPlaces(); return false;">
+                          키워드 : <input type="text" value="아쿠아플라넷" id="keyword" size="15"> 
+                          <button type="submit">검색하기</button> 
+                      </form>
+                  </div>
+              </div>
+              <ul id="placesList"></ul>
+              <div id="pagination"></div>
+          </div><!--menu_wrap-->
+      </div><!--map_wrap-->
+      </article>
+
+
+
+      <footer>
+        <div class="footer">
+            <div class="footer_logo">
+                <h1><a href="#" target="_blank"><img src="./img/main/h_logo.svg" alt="로고 이미지"></a></h1>
+                <p>Copyright © Hanwha Hotels & Resorts.,LTD. All rights reserved.</p>
+            </div>
+            <ul class="footer_menu">
+                <a href="">
+                    <li>연구센터소개</li>
+                </a>
+                <a href="">
+                    <li>구조ㆍ치료 활동</li>
+                </a>
+                <a href="">
+                    <li>보전활동</li>
+                </a>
+                <a href="">
+                    <li>연구과제</li>
+                </a>
+            </ul>
+            <div class="familysites">
+                <a href="#familysites" class="familysitesgo">
+                  <span class="foot_sel">Family Sites</span>
+                  <span><img src="./img/main/keyboard_arrow_up.svg" alt=""></span>
+                </a>
+                <ul class="family_menu">
+                    <li>
+                        <a href="http://www.aquaplanet.co.kr/" target="_blank" title="새창이동">
+                            <span>아쿠아플라넷</span>
+                        </a>
+                    </li>
+                            <li>
+                        <a href="https://www.hanwha.co.kr/index.do" >
+                            <span class="txt01">한화그룹</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.hwrc.co.kr/hwrc/index.do">
+                            <span>한화호텔&리조트㈜</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="http://www.hanwharesort.co.kr/" >
+                        <span>한화리조트</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="http://www.plazacc.co.kr/" >
+                            <span>플라자CC</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.63restaurant.co.kr/main.r63">
+                            <span>63레스토랑</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.hoteltheplaza.com/kr/" >
+                            <span>플라자호텔</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+    </main>
+
+    <!--paging quickmenu-->
+    <aside class="section-paging">
+        <ul>
+            <li class="active">메인</li>
+            <li>연구과제</li>
+            <li>보전활동대상생물</li>
+            <li>구조ㆍ치료 실적 리스트</li>
+            <li>오시는 길</li>
+        </ul>
+    </aside>
+    
+
+   <!-- 모바일 탑버튼 -->
+    <a id="top-btn" class="top-btn">
+    <img src="./img/banner_top/top-btn.svg" alt="">
+    </a>
+  <!-- <script src="./js/top_btn.js"></script> -->
+
+  </body>
+</html>

@@ -1,0 +1,280 @@
+@import "./_common";
+@import url("./reset.css");
+
+$mobile:767px;
+$tablet:768px;
+$pc:1200px;
+
+@mixin res($device){
+    @if($device == 'mobile'){
+        @media(max-width:$mobile){
+            @content;
+        }        
+    }
+    @else if($device == 'tablet'){
+        @media (min-width:$tablet) and (max-width:$pc){
+            @content;
+        }  
+    }
+    @else{
+        @media (min-width:$pc){
+            @content;
+        }  
+    }
+}
+
+@include res('tablet'){}
+
+/* main content */
+.content_{
+    @include res('mobile'){
+        margin: 0 24px;
+    }
+    @include res('tablet'){
+        margin: 0 48px;
+    }
+    .mini-title{
+        max-width: 1400px;
+        margin: 0 auto;
+        .title-text{
+            font-size: 18px;
+            line-height: 160%;
+            text-align: center;
+            @include res('mobile'){
+                font-size: 16px;
+                // word-break: keep-all;
+                text-align: justify;
+            }
+            @include res('tablet'){
+                text-align: left;
+                // word-break: keep-all;
+                text-align: justify;
+            }
+            br{
+                @include res('mobile'){display: none;}
+                @include res('tablet'){display: none;}                
+            }
+        }
+        .title-content-line{
+            display: inline-block;
+            width: 100%;
+            border: 1px solid #dddddd;
+            margin: 70px 0;
+            @include res('mobile'){
+                width: 100%;
+                margin: 50px 0px;
+            }
+        }
+    }
+
+    /* 최신 수행연구 카드리스트 */
+
+
+
+    /* 수행연구 리스트 */
+
+    .content_research_list{
+        max-width: 1400px;
+        margin: 0 auto;
+        margin-bottom: 110px;
+        @include res('mobile'){
+            margin-bottom: 50px;
+        }
+        .content_list-top{
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            margin-top: 70px;
+            @include res('mobile'){
+                flex-direction: column-reverse;
+                margin: 0;
+            }
+            >p{
+                padding-top: 18px;
+                font-size: 18px;
+                opacity: .75;
+                @include res('mobile'){
+                    font-size: 13px;
+                    padding: 20px 0;
+                }
+                >span{
+                    color: rgba(255, 102, 0, .75);
+                    font-weight: 700;
+                }
+            }
+            .list-search{
+                form{
+                    width: 250px;
+                height: 50px;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                padding: 0 15px;
+                @include res('mobile'){
+                    margin: 0 auto;
+                    border: 1px solid rgba(85, 85, 85, .2);
+                    width: 100%;
+                }
+                    >span{
+                        >input{
+                            border-style: none;
+                            font-size: 14px;
+                            height: 30px;
+                            padding-left: 10px;
+                            
+                        }
+                    }
+                    .search-btn{
+                        width: 33px;
+                        height: 33px;
+                        background-image: url(../img/aqua/search.svg);
+                        display: block;
+                    }
+                }
+            }
+        }
+
+        .content_cardlist{
+            max-width: 1400px;
+            margin: 0 auto;
+            margin-top: 24px;
+            
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px 20px;
+            @include res('mobile'){
+                margin: 0;
+                flex-wrap: wrap;
+                gap: 16px;
+            }
+            @include res('tablet'){
+                justify-content: space-around;
+                gap: 20px 30px;
+            }
+            &.content_cardlist.on{
+                justify-content: flex-start;
+            }
+            .content_card{
+                width: 320px;
+                height: 305px;
+
+                position: relative;
+                border: 1px solid transparent;
+                transition: .7s;
+                @include res('mobile'){
+                    max-width: 150px;
+                    height: 100%;
+                }
+                >a{
+                    .card-img{
+                        width: 100%;
+                        height: 220px;
+                        background-color: #eeeeee;
+        
+                        position: relative;
+                        >img{
+                            width: 160px;
+                            height: 190px;
+                            position: absolute;
+                            top: 50%; left: 50%;
+                            transform: translateX(-50%) translateY(-50%);
+                            @include res('mobile'){
+                                width: 130px;                                
+                            }
+                        }
+                    }
+                    figcaption{
+                        max-width: 200px;
+                        margin: 17px auto;
+                        @include res('mobile'){
+                            margin: 5px auto;
+                        }
+                        >p{
+                            width: 100%;
+                            height: 22px;
+                            overflow: hidden;
+                            text-align: center;
+                            font-size: 18px;
+                            color: #000;
+                            font-size: 600;
+                            white-space: nowrap;
+                            text-overflow: ellipsis;
+                            @include res('mobile'){
+                                font-size: 14px;
+                            }
+                        }
+                    }
+                }
+            }
+        
+        }
+        .content_card::before{
+            content: '';
+            position: absolute;
+            left: 0px;
+            bottom:0px;
+            width: 0%;
+            height:3px;
+            background: rgba(255, 102, 0, .6);
+            transition: .7s;
+            display: block;
+        }
+        .content_card:hover::before{
+            width: 100%;
+        }
+        .content_card::after{
+            content: '';
+            position: absolute;
+            right: 0px;
+            top:0px;
+            z-index:-1;
+            width: 0%;
+            height:2px;
+            background: rgba(255, 102, 0, .6);
+            transition: .7s;
+            display: block;
+        }
+        .content_card:hover::after{
+            width: 100%;
+            z-index: 2;
+        }
+        .content_card:hover{
+            border-left: 2px solid rgba(255, 102, 0, .6);
+            border-right: 2px solid rgba(255, 102, 0, .6);
+        }
+        
+        .page{
+            // display: inline-block;
+            margin: 0 auto;
+            margin-top: 50px;
+            text-align: center;
+            @include res('mobile'){
+                margin: 50px 0;
+            }
+            .page-btn{
+                padding-right: 5px;
+                color: #747474;
+                font-weight: 400;   
+                font-size: 15px;
+            }
+            // .page-btn:first-of-type{
+            //     font-size: 18px;
+            //     font-weight: bold;
+            //     color: #000;
+            // }
+            .page-btn.off{
+                color: #747474;
+                font-weight: 400;
+                font-size: 15px;
+
+            }
+            .page-btn.on{
+                font-size: 18px;
+                font-weight: bold;
+                color: #000;
+            }
+        }
+    }
+}

@@ -1,0 +1,100 @@
+@import "./_common";
+@import url("./reset.css");
+
+$mobile:767px;
+$tablet:768px;
+$pc:1200px;
+
+@mixin res($device){
+    @if($device == 'mobile'){
+        @media(max-width:$mobile){
+            @content;
+        }        
+    }
+    @else if($device == 'tablet'){
+        @media (min-width:$tablet) and (max-width:$pc){
+            @content;
+        }  
+    }
+    @else{
+        @media (min-width:$pc){
+            @content;
+        }  
+    }
+}
+
+@include res('mobile'){}
+@include res('tablet'){}
+
+
+/* 인사말 */
+.content_{
+    padding: 110px;
+    @include res('mobile'){
+      padding: 0 24px 50px;
+    }
+    @include res('tablet'){
+      padding: 0 48px 50px;
+    }
+  }
+  .content_ceo{
+      width: 1200px;
+      margin: 0 auto;
+      text-align: left;
+      @include res('mobile'){
+        width: 100%;
+      }
+      @include res('tablet'){
+        width: 100%;
+        word-break: keep-all;
+      }
+  }
+  .content_ceo > b{
+      font-size: 25px;
+      @include res('mobile'){
+        font-size: 18px;
+        display: ruby-text;
+        word-break: keep-all;
+        line-height: 24px;
+        font-weight: 600;
+        letter-spacing: 0.7px;
+      }
+      @include res(('tablet')){
+        font-weight: 600;
+        letter-spacing: 0.5px;
+        font-size: 24px;
+      }
+  }
+  .content_ceo > b > span{
+      color: #FF6600;
+  }
+  .content_ceo > p{
+    margin-top: 50px;
+    font-size: 18px;
+    line-height: 2.2;
+    text-align: justify;
+ 
+    @include res('mobile'){
+      font-size: 16px;
+      line-height: 24px;
+      margin-top: 24px;
+      letter-spacing: 0.5px;
+    }
+    @include res('tablet'){
+    }
+  }
+  .content_ceo > div{
+    text-align: right;
+    margin-top: 46px;
+    @include res('mobile'){
+      font-size: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+    }
+  }
+  .content_ceo > div > img{
+    @include res('mobile'){
+      width: 60px;
+    }
+  }
