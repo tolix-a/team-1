@@ -8,10 +8,11 @@
 일반 사용자가 사용하기에 가독성을 더 높이고, 반응형으로 제작하여 모바일에서도 편하게 방문 할 수 있도록 개선
      
 ### `개발 환경`
-- HTML
-- CSS/SCSS
-- JavaScript
-- Jquery
+<img src="https://img.shields.io/badge/html5-E34F26?style=for-the-badge&logo=html5&logoColor=white"> <img src="https://img.shields.io/badge/Sass-CC6699?style=for-the-badge&logo=sass&logoColor=white">
+<img src="https://img.shields.io/badge/javascript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black">
+<img src="https://img.shields.io/badge/jquery-0769AD?style=for-the-badge&logo=jquery&logoColor=white">
+<img src="https://img.shields.io/badge/github-181717?style=for-the-badge&logo=github&logoColor=white">
+<img src="https://img.shields.io/badge/Figma-F24E1E?style=for-the-badge&logo=figma&logoColor=white">
   
 ### `기간`
 2024.07 - 2024.08 (약 1달)
