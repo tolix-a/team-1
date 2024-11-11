@@ -7,6 +7,7 @@
      
 ### 개발 환경
 <img src="https://img.shields.io/badge/html5-E34F26?style=for-the-badge&logo=html5&logoColor=white"> <img src="https://img.shields.io/badge/Sass-CC6699?style=for-the-badge&logo=sass&logoColor=white">
+<img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white">
 <img src="https://img.shields.io/badge/javascript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black">
 <img src="https://img.shields.io/badge/Figma-F24E1E?style=for-the-badge&logo=figma&logoColor=white">
 <img src="https://img.shields.io/badge/jquery-0769AD?style=for-the-badge&logo=jquery&logoColor=white">
@@ -20,7 +21,7 @@
 ### 리뉴얼 사이트 선정 이유 및 개선사항
 - 한화에서 운영하는 해양생물 관련 사이트 중 가장 관심도가 낮은 사이트로 사용자가 적은 만큼 오래된 상태로 방치되어
 
-  노후화, 오래된 디자인이 고착되어있다는 점을 토대로 리뉴얼을 결정.
+  노후화, 오래된 디자인이 고착되어있다는 점을 토대로 리뉴얼을 결정
 
 - 한화에서 운영하는 다른 해양생물 사이트인 아쿠아플라넷 공식 사이트를 참고하여 리뉴얼 디자인을 진행
 
