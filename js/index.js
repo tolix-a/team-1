@@ -129,6 +129,7 @@ fetch("./data/index.json")
 
  //카카오 지도 자바스크립트
  // 마커를 담을 배열입니다
+
  var markers = [],ea=5;
 
 var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
@@ -138,6 +139,14 @@ var mapContainer = document.getElementById('map'), // 지도를 표시할 div
     }; 
 // 지도를 생성합니다    
 var map = new kakao.maps.Map(mapContainer, mapOption); 
+
+
+mapContainer.onwheel = function(e){
+    e.stopPropagation();
+}
+
+
+
 
 
 // 장소 검색 객체를 생성합니다
@@ -360,3 +369,11 @@ item.onclick = (e)=>{
 }
 });
 
+//맵 아이콘 클릭시 나오고 들어가기
+const mapBtn = document.querySelector('.map-quick-btn'),
+      mapQuick = document.querySelector('.map-quick');
+
+mapBtn.onclick = function(){
+    mapQuick.classList.toggle('active');
+
+}
