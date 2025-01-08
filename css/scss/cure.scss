@@ -176,11 +176,12 @@ $pc:1200px;
     line-height: 160%;
     color: rgba(0,0,0,0.75);
     text-align: justify;
+    padding: 0 10px 0 0;
     @include res('mobile'){
         font-size: 16px;
 
         overflow-y: auto;
-        height: 500px;
+        height: 85%;
     }
     @include res('tablet'){}
 }
@@ -188,7 +189,7 @@ $pc:1200px;
     position: absolute;
     left: 0; bottom: 0;
     width: 100%;
-    padding: 8px 0;
+    padding: 10px 0;
     border-radius: 0 0 20px 20px;
     text-align: center;
     font-weight: 400;

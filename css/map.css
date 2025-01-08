@@ -728,6 +728,7 @@ h2 {
   word-break: keep-all;
   border-bottom: 1px solid #CCCCCC;
   margin: 15px 0;
+  cursor: pointer;
 }
 @media (max-width: 767px) {
   .move > ul > li {

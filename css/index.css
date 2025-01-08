@@ -265,6 +265,7 @@ footer .footer {
 }
 .familysites .family_menu_on {
   display: block;
+  z-index: 100;
 }
 
 main {
