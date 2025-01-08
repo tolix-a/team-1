@@ -29,7 +29,7 @@ header .header-wrap {
   height: 80px;
   margin: 0 auto;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
 }
 header .header-wrap h1 {
@@ -216,6 +216,55 @@ footer .footer {
   font-size: 16px;
   font-weight: 500;
   color: #fff;
+}
+
+.familysites {
+  font-size: 12px;
+  color: #fff;
+  position: relative;
+}
+@media (max-width: 767px) {
+  .familysites {
+    margin-top: 10px;
+    margin-right: 24px;
+  }
+}
+.familysites .familysitesgo {
+  max-width: 160px;
+  height: 40px;
+  display: inline-block;
+  border: 1px solid #fff;
+  padding: 0 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.familysites .familysitesgo > .familyarrow {
+  transition: 0.3s;
+}
+.familysites .familysitesgo .familyarrow_on {
+  transform: rotate(180deg);
+}
+.familysites .familysitesgo_on {
+  border-top: none;
+  transition: 0.3s;
+}
+.familysites .family_menu {
+  display: none;
+  max-width: 160px;
+  padding: 0 15px 5px;
+  background-color: #383838;
+  border: 1px solid #fff;
+  border-bottom: none;
+  position: absolute;
+  bottom: 100%;
+}
+.familysites .family_menu > li {
+  display: block;
+  padding-top: 5px;
+}
+.familysites .family_menu_on {
+  display: block;
 }
 
 main {
@@ -729,14 +778,11 @@ h2 {
   height: 100vh;
 }
 .map_wrap #menu_wrap {
-  padding: 15px;
-  background-color: rgba(255, 255, 255, 0.8);
-  border-radius: 5px;
   position: absolute;
   width: 300px;
   height: auto;
   top: 194px;
-  right: 5%;
+  right: 0;
   z-index: 100;
   overflow: hidden;
 }
@@ -760,6 +806,26 @@ h2 {
   margin-top: -2px;
   background-color: black;
   color: white;
+}
+.map_wrap #menu_wrap .map-quick {
+  display: flex;
+  background-color: rgba(255, 255, 255, 0.9);
+  transform: translateX(256px);
+}
+.map_wrap #menu_wrap .map-quick button {
+  padding: 0 10px;
+  color: white;
+  font-size: 30px;
+  background-color: #3366FF;
+}
+.map_wrap #menu_wrap .map-quick .map-box {
+  margin: 10px 17px;
+}
+.map_wrap #menu_wrap .map-quick.active {
+  transform: translateX(0px);
+}
+.map_wrap #menu_wrap .map-quick.active > button img {
+  transform: rotate(45deg);
 }
 .map_wrap #menu_wrap #placesList {
   margin-top: 10px;
@@ -1284,6 +1350,12 @@ h2 {
     height: auto;
     margin-top: 50px;
   }
+  .map_wrap #menu_wrap .map-quick {
+    transform: translateX(0px);
+  }
+  .map_wrap #menu_wrap .map-quick button {
+    display: none;
+  }
   .map_wrap #menu_wrap #placesList {
     display: flex;
     height: auto;
@@ -1781,6 +1853,12 @@ h2 {
     height: auto;
     margin-top: 50px;
   }
+  .map_wrap #menu_wrap .map-quick {
+    transform: translateX(0px);
+  }
+  .map_wrap #menu_wrap .map-quick button {
+    display: none;
+  }
   .map_wrap #menu_wrap #placesList {
     display: flex;
     height: auto;
@@ -1808,5 +1886,155 @@ h2 {
   /* paging quick menu */
   .section-paging {
     display: none;
+  }
+}
+@media (max-width: 1200px) {
+  header .header-wrap h1 {
+    position: absolute;
+    left: 48px;
+    top: 12%;
+    z-index: 10;
+  }
+  header .header-wrap nav {
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-color: white;
+    z-index: 1;
+    padding: 100px 48px 0px;
+    display: none;
+  }
+  header .header-wrap nav ul {
+    flex-direction: column;
+  }
+  header .header-wrap nav > ul > li {
+    width: 100%;
+    text-align: left;
+    position: relative;
+  }
+  header .header-wrap nav > ul > li > a::before {
+    content: url(../img/main/more_arrow.svg);
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  header .header-wrap .drop-down-menu {
+    position: static;
+    padding: 10px 0;
+    max-height: 0px;
+    overflow: hidden;
+    transition: 0.5s;
+  }
+  header .header-wrap .drop-down-menu li {
+    text-align: left;
+  }
+  header .header-wrap .trigger {
+    display: block;
+    width: 25px;
+    position: absolute;
+    right: 48px;
+    top: 25%;
+    z-index: 10;
+  }
+  header.active::after {
+    display: block;
+    display: none;
+  }
+  header.active .header-wrap .drop-down-menu {
+    display: block;
+  }
+  header.active .header-wrap nav {
+    display: block;
+  }
+  header.active .header-wrap nav ul li.active a::after {
+    transform: translateY(100%);
+    font-weight: 600 !important;
+    width: 0%;
+    display: block;
+    margin: 0;
+    animation: line-1 0.3s forwards;
+  }
+  @keyframes line-1 {
+    100% {
+      width: 100%;
+    }
+  }
+  header.active .header-wrap nav ul li.active .drop-down-menu {
+    padding: 30px 0;
+    max-height: 200px;
+  }
+  header.active nav ul li a {
+    color: black;
+    font-weight: 400 !important;
+  }
+  header.active .drop-down-menu li a {
+    color: black;
+    font-weight: 300 !important;
+  }
+  header.active .trigger > span {
+    display: block;
+    width: 100%;
+    border-bottom: 1px solid black;
+    position: absolute;
+    top: 10px;
+    left: 0;
+    transition: 0.3s;
+  }
+  header.active .trigger > span:nth-of-type(1) {
+    transform: rotate(45deg);
+  }
+  header.active .trigger > span:nth-of-type(2), header.active .trigger > span:nth-of-type(4) {
+    display: none;
+  }
+  header.active .trigger > span:nth-of-type(3) {
+    transform: rotate(-45deg);
+  }
+  header.active h1 img {
+    filter: brightness(0%);
+  }
+}
+/*1200pc 밑으로 나타나는 탑버튼*/
+.top-btn {
+  display: none;
+  display: inline-block;
+  position: fixed;
+  top: 98%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-98%);
+  width: 26px;
+  height: 26px;
+  border: 1px solid rgba(255, 255, 255, 0.75);
+  border-radius: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: 0.7s ease;
+}
+@media (max-width: 767px) {
+  .top-btn {
+    display: flex;
+  }
+}
+@media (min-width: 768px) and (max-width: 1200px) {
+  .top-btn {
+    display: flex;
+  }
+}
+
+.top-btn-on {
+  opacity: 1;
+  display: none;
+}
+@media (max-width: 767px) {
+  .top-btn-on {
+    display: flex;
+  }
+}
+@media (min-width: 768px) and (max-width: 1200px) {
+  .top-btn-on {
+    display: flex;
   }
 }
