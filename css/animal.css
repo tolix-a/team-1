@@ -625,37 +625,39 @@ h2 {
 @media (max-width: 767px) {
   .content_ .tab {
     width: 100%;
+    height: auto;
     margin-bottom: 24px;
   }
 }
 @media (min-width: 768px) and (max-width: 1200px) {
   .content_ .tab {
     width: 100%;
+    height: auto;
     margin-bottom: 24px;
   }
 }
-.content_ .tab > .nav > .tab-menu {
+.content_ .tab > .tab-menu {
   display: flex;
   justify-content: space-around;
 }
 @media (max-width: 767px) {
-  .content_ .tab > .nav > .tab-menu {
+  .content_ .tab > .tab-menu {
     overflow-x: auto;
     white-space: nowrap;
   }
 }
 @media (min-width: 768px) and (max-width: 1200px) {
-  .content_ .tab > .nav > .tab-menu {
+  .content_ .tab > .tab-menu {
     overflow-x: auto;
     white-space: nowrap;
   }
 }
-.content_ .tab > .nav > .tab-menu > li {
+.content_ .tab > .tab-menu > li {
   flex: 1;
   text-align: center;
   align-content: center;
 }
-.content_ .tab > .nav > .tab-menu > li::after {
+.content_ .tab > .tab-menu > li::after {
   content: "";
   display: inline-block;
   height: 25.5px;
@@ -663,19 +665,19 @@ h2 {
   border-right: 1px solid #C0C0C0;
 }
 @media (max-width: 767px) {
-  .content_ .tab > .nav > .tab-menu > li::after {
+  .content_ .tab > .tab-menu > li::after {
     border: none;
   }
 }
 @media (min-width: 768px) and (max-width: 1200px) {
-  .content_ .tab > .nav > .tab-menu > li::after {
+  .content_ .tab > .tab-menu > li::after {
     border: none;
   }
 }
-.content_ .tab > .nav > .tab-menu > li:last-of-type::after {
+.content_ .tab > .tab-menu > li:last-of-type::after {
   border: none;
 }
-.content_ .tab > .nav > .tab-menu > li > a {
+.content_ .tab > .tab-menu > li > a {
   display: inline-block;
   width: calc(100% - 2px);
   font-weight: 600;
@@ -684,28 +686,38 @@ h2 {
   transform: scaleX(1.08);
 }
 @media (max-width: 767px) {
-  .content_ .tab > .nav > .tab-menu > li > a {
+  .content_ .tab > .tab-menu > li > a {
     font-size: 16px;
     transform: scaleX(1);
     padding: 10px 30px;
   }
 }
 @media (min-width: 768px) and (max-width: 1200px) {
-  .content_ .tab > .nav > .tab-menu > li > a {
+  .content_ .tab > .tab-menu > li > a {
     font-size: 16px;
     transform: scaleX(1);
     padding: 10px 30px;
   }
 }
-.content_ .tab > .nav > .tab-menu > li.active::after, .content_ .tab > .nav > .tab-menu > li.active::before {
+.content_ .tab > .tab-menu > li.active::after, .content_ .tab > .tab-menu > li.active::before {
   border: none;
 }
-.content_ .tab > .nav > .tab-menu > li.active a {
+.content_ .tab > .tab-menu > li.active a {
   height: 50px;
   align-content: center;
   background-color: #3366FF;
   border-radius: 99px;
   color: white;
+}
+@media (max-width: 767px) {
+  .content_ .tab > .tab-menu > li.active a {
+    height: auto;
+  }
+}
+@media (min-width: 768px) and (max-width: 1200px) {
+  .content_ .tab > .tab-menu > li.active a {
+    height: auto;
+  }
 }
 .content_ .animali {
   display: flex;
@@ -919,4 +931,4 @@ h2 {
   font-size: 16px;
   color: white;
   background-color: #189DA9;
-}
+}/*# sourceMappingURL=animal.css.map */

@@ -41,75 +41,78 @@ $pc:1200px;
       margin-bottom: 110px;
       @include res('mobile'){
          width: 100%;
+         height: auto;
          margin-bottom: 24px;
       }
       @include res('tablet'){
          width: 100%;
+         height: auto;
          margin-bottom: 24px;
       }
-      >.nav{
-         >.tab-menu{
-            display: flex;
-            justify-content: space-around;
-            @include res('mobile'){
-               overflow-x: auto;
-               white-space: nowrap;
-            }
-            @include res('tablet'){
-               overflow-x: auto;
-               white-space: nowrap;
-            }
-            >li{
-               flex: 1;
-               text-align: center;
-               align-content: center;
-                  &::after{
-                     content: '';
-                     display: inline-block;
-                     height: 25.5px;
-                     vertical-align: middle;
-                     border-right: 1px solid #C0C0C0;
-                     @include res('mobile'){
-                        border: none;
-                     }
-                     @include res('tablet'){
-                        border: none;
-                     }
-                  }
-               &:last-of-type::after{
-                  border: none;
-               }
-               >a{
+      >.tab-menu{
+         display: flex;
+         justify-content: space-around;
+         @include res('mobile'){
+            overflow-x: auto;
+            white-space: nowrap;
+         }
+         @include res('tablet'){
+            overflow-x: auto;
+            white-space: nowrap;
+         }
+         >li{
+            flex: 1;
+            text-align: center;
+            align-content: center;
+               &::after{
+                  content: '';
                   display: inline-block;
-                  width: calc(100% - 2px);
-                  font-weight: 600;
-                  font-size: 18px;
-                  color: #282828;
-                  transform: scaleX(1.08);
+                  height: 25.5px;
+                  vertical-align: middle;
+                  border-right: 1px solid #C0C0C0;
                   @include res('mobile'){
-                     font-size: 16px;
-                     transform: scaleX(1);
-                     padding: 10px 30px;
-                  }
-                  @include res('tablet'){
-                     font-size: 16px;
-                     transform: scaleX(1);
-                     padding: 10px 30px;
-                  }
-               }
-               &.active{
-                  &::after,&::before{
                      border: none;
                   }
-                  a{
-                     height: 50px;
-                     align-content: center;
-                     background-color: #3366FF;
-                     border-radius: 99px;
-                     color: white;
-                     @include res('mobile'){
-                        // border-radius: 99px;
-                     }
+                  @include res('tablet'){
+                     border: none;
+                  }
+               }
+            &:last-of-type::after{
+               border: none;
+            }
+            >a{
+               display: inline-block;
+               width: calc(100% - 2px);
+               font-weight: 600;
+               font-size: 18px;
+               color: #282828;
+               transform: scaleX(1.08);
+               @include res('mobile'){
+                  font-size: 16px;
+                  transform: scaleX(1);
+                  padding: 10px 30px;
+               }
+               @include res('tablet'){
+                  font-size: 16px;
+                  transform: scaleX(1);
+                  padding: 10px 30px;
+               }
+            }
+            &.active{
+               &::after,&::before{
+                  border: none;
+               }
+               a{
+                  height: 50px;
+                  align-content: center;
+                  background-color: #3366FF;
+                  border-radius: 99px;
+                  color: white;
+                  @include res('mobile'){
+                     height: auto;
+                  }
+                  @include res('tablet'){
+                     height: auto;
                   }
                }
             }
