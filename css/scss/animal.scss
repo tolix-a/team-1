@@ -52,6 +52,7 @@ $pc:1200px;
       >.tab-menu{
          display: flex;
          justify-content: space-around;
+         width: 100%;
          @include res('mobile'){
             overflow-x: auto;
             white-space: nowrap;
@@ -91,6 +92,7 @@ $pc:1200px;
                   font-size: 16px;
                   transform: scaleX(1);
                   padding: 10px 30px;
+                  width: auto;
                }
                @include res('tablet'){
                   font-size: 16px;

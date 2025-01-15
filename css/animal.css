@@ -639,6 +639,7 @@ h2 {
 .content_ .tab > .tab-menu {
   display: flex;
   justify-content: space-around;
+  width: 100%;
 }
 @media (max-width: 767px) {
   .content_ .tab > .tab-menu {
@@ -690,6 +691,7 @@ h2 {
     font-size: 16px;
     transform: scaleX(1);
     padding: 10px 30px;
+    width: auto;
   }
 }
 @media (min-width: 768px) and (max-width: 1200px) {
