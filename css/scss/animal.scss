@@ -51,7 +51,9 @@ $pc:1200px;
       }
       >li{
          flex: 1;
-         text-align: center;
+         display: flex;
+         justify-content: center;
+         align-items: center;
             &::after{
                content: '';
                display: inline-block;
@@ -69,14 +71,16 @@ $pc:1200px;
             border: none;
          }
          >a{
-            display: inline-block;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            
             width: calc(100% - 2px);
             height: 50px;
             font-weight: 600;
             font-size: 18px;
             color: #282828;
             transform: scaleX(1.08);
-            align-content: center;
             @include res('mobile'){
                font-size: 16px;
                transform: scaleX(1);
