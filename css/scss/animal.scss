@@ -52,7 +52,6 @@ $pc:1200px;
       >li{
          flex: 1;
          text-align: center;
-         align-content: center;
             &::after{
                content: '';
                display: inline-block;
@@ -72,10 +71,12 @@ $pc:1200px;
          >a{
             display: inline-block;
             width: calc(100% - 2px);
+            height: 50px;
             font-weight: 600;
             font-size: 18px;
             color: #282828;
             transform: scaleX(1.08);
+            align-content: center;
             @include res('mobile'){
                font-size: 16px;
                transform: scaleX(1);
@@ -92,8 +93,6 @@ $pc:1200px;
                border: none;
             }
             a{
-               height: 50px;
-               align-content: center;
                background-color: #3366FF;
                border-radius: 99px;
                color: white;
