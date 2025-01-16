@@ -279,7 +279,6 @@ footer .footer {
 @media (max-width: 767px) {
   .container {
     margin-top: 0;
-    overflow: visible;
   }
 }
 
@@ -628,6 +627,7 @@ h2 {
     overflow-x: auto;
     white-space: nowrap;
     margin-bottom: 24px;
+    justify-content: flex-start;
   }
 }
 @media (min-width: 768px) and (max-width: 1200px) {

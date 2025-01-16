@@ -43,6 +43,7 @@ $pc:1200px;
          overflow-x: auto;
          white-space: nowrap;
          margin-bottom: 24px;
+         justify-content: flex-start;
       }
       @include res('tablet'){
          overflow-x: auto;
