@@ -51,9 +51,9 @@ $pc:1200px;
       }
       >li{
          flex: 1;
-         display: flex;
-         justify-content: center;
-         align-items: center;
+         // display: flex;
+         // justify-content: center;
+         // align-items: center;
             &::after{
                content: '';
                display: inline-block;
@@ -100,12 +100,6 @@ $pc:1200px;
                background-color: #3366FF;
                border-radius: 99px;
                color: white;
-               @include res('mobile'){
-                  // height: auto;
-               }
-               @include res('tablet'){
-                  // height: auto;
-               }
             }
          }
       }

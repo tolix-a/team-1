@@ -638,9 +638,6 @@ h2 {
 }
 .content_ > .tab-menu > li {
   flex: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 .content_ > .tab-menu > li::after {
   content: "";
