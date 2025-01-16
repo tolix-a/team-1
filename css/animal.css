@@ -279,6 +279,7 @@ footer .footer {
 @media (max-width: 767px) {
   .container {
     margin-top: 0;
+    overflow: visible;
   }
 }
 

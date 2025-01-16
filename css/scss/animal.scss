@@ -51,9 +51,6 @@ $pc:1200px;
       }
       >li{
          flex: 1;
-         // display: flex;
-         // justify-content: center;
-         // align-items: center;
             &::after{
                content: '';
                display: inline-block;
